@@ -1,0 +1,3 @@
+username=gashley
+password=e^(auBergine9713
+domain=durangomountain.local
