@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+
+#This script takes as input a list of IP addresses of Salespoints to be checked (or hostnames, depending on your dns settings) and writes to the working directory a .csv file with the following data for each Salespoint:
+#["Host IP Address", "DirectNet IP Address", "DirectNet Port"]
+
 import re
 import os
 import time
@@ -28,7 +32,7 @@ for POS in POSs:
     
     a = os.system(r'''smbget smb:{}  -D -o {} --user={}'''.format(DN_path, local_path, user_pwd)) 
 
-#Normally I would prefer a try/except block here but in this case "except" did not catch the exception when the path to the file was not found, i.e. when the PC was turned off or when it was not a SP.  Thus, the below instead (parsing the returncode worked to catch the errors but try/except did not).
+#Typically I have used a try/except block here but in this case "except" did not catch the exception when the path to the file was not found, i.e. when the PC was turned off or when it was not a SP.  Thus, the below instead (parsing the returncode worked to catch the errors but try/except did not).
 
     if a == 0:
         print("Success!")

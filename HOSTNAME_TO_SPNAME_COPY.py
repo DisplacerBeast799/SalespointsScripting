@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+#This script takes as input a list of IP addresses (or hostnames, depending on your dns settings) of the Salespoints to be checked and writes to the working directory a .csv file with the following information for each Salespoint: ["Salespoint name", "Windows Hostname", "IP Address"]
+
 import re
 import os
 import time
